@@ -5,10 +5,12 @@
 
 #include "problem1.hpp"
 #include "problem2.hpp"
+#include "problem3.hpp"
 
 std::vector<euler::euler *> problems{
     new euler::problem1(),
     new euler::problem2(),
+    new euler::problem3(),
 };
 
 int main() {
