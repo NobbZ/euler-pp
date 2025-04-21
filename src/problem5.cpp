@@ -9,8 +9,6 @@ int16_t euler::problem5::id() { return 5; }
 
 std::string euler::problem5::caption() { return "Smallest Multiple"; }
 
-std::string euler::problem5::description() { return ""; }
-
 uint64_t euler::problem5::run() {
   uint64_t num{2};
 

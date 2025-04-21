@@ -1,18 +1,9 @@
-#include <vector>
-
 #include "numbers.hpp"
 #include "problem4.hpp"
 
 int16_t euler::problem4::id() { return 4; }
 
 std::string euler::problem4::caption() { return "Largest Palindrome Product"; }
-
-std::string euler::problem4::description() {
-  return "A palindromic number reads the same both ways. "
-         "The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 99.\n"
-         "\n"
-         "Find the largest palindrome made from the product of two 3-digit numbers.\n";
-}
 
 uint64_t euler::problem4::run() {
   const uint64_t min { 100 };

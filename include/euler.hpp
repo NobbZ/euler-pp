@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cinttypes>
+#include <cstdint>
 #include <string>
 
 namespace euler {
@@ -14,8 +14,6 @@ public:
   virtual int16_t id() = 0;
   /** This field shall return the actual title of the problem. */
   virtual std::string caption() = 0;
-  /** This field shall return a longer description of the problem. */
-  virtual std::string description() = 0;
 
   /** Runs the actual problem solution and returns the result. */
   virtual uint64_t run() = 0;
