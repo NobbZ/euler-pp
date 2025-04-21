@@ -3,6 +3,8 @@ project('euler++', 'cpp',
 )
 
 subdir('include')
+
+subdir('doc')
 subdir('src')
 
 executable('euler', euler_source_files,
