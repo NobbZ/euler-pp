@@ -9,6 +9,7 @@
 #include "problem3.hpp"
 #include "problem4.hpp"
 #include "problem5.hpp"
+#include "problem6.hpp"
 
 std::vector<euler::euler *> problems{
   new euler::problem1(),
@@ -16,6 +17,7 @@ std::vector<euler::euler *> problems{
   new euler::problem3(),
   new euler::problem4(),
   new euler::problem5(),
+  new euler::problem6(),
 };
 
 int main() {
