@@ -8,7 +8,7 @@
       devShell.x86_64-linux = pkgs.mkShell {
         pname = "aoc-c-shell";
 
-        buildInputs = [ pkgs.gnumake pkgs.bear pkgs.doxygen pkgs.graphviz ];
+        packages = [ pkgs.gnumake pkgs.bear pkgs.doxygen pkgs.graphviz pkgs.meson pkgs.mesonlsp pkgs.ninja pkgs.clang-tools ];
       };
     };
 }
