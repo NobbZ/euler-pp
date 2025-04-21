@@ -1,5 +1,5 @@
-#include <algorithm>
 #include <cstdint>
+#include <numeric>
 #include <ranges>
 #include <string>
 
@@ -10,12 +10,9 @@ int16_t euler::problem5::id() { return 5; }
 std::string euler::problem5::caption() { return "Smallest Multiple"; }
 
 uint64_t euler::problem5::run() {
-  uint64_t num{2};
+  auto divisors{std::ranges::views::iota(1, 20)};
 
-  while (!std::ranges::all_of(std::ranges::views::iota(1, 20),
-                             [num](uint64_t n) { return num % n == 0; })) {
-    num += 2;
-  }
-
-  return num;
+  return std::accumulate(divisors.begin(), divisors.end(), 1, [](uint64_t n, uint64_t acc) {
+    return std::lcm(n, acc);
+  });
 }
