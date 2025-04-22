@@ -1,3 +1,6 @@
+#include <numeric>
+#include <ranges>
+
 #include "problem1.hpp"
 
 int16_t euler::problem1::id() const { return 1; }
@@ -5,13 +8,10 @@ int16_t euler::problem1::id() const { return 1; }
 std::string euler::problem1::caption() { return "Multiples of 3 and 5"; }
 
 uint64_t euler::problem1::run() {
-  uint64_t sum{0};
+  auto multiples = std::ranges::views::iota(1, 1000) |
+                   std::ranges::views::filter([](uint64_t i) noexcept {
+                     return i % 3 == 0 || i % 5 == 0;
+                   });
 
-  for (uint16_t i = 1; i < 1000; ++i) {
-    if (i % 3 == 0 || i % 5 == 0) {
-      sum += i;
-    }
-  }
-
-  return sum;
+  return std::accumulate(multiples.begin(), multiples.end(), 0ULL);
 }
