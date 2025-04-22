@@ -8,10 +8,12 @@ namespace euler {
 /** A virtual class to be used as a blueprint for actual euler problems
  *
  */
-class euler {
+class [[gnu::abi_tag("cxx11")]] euler {
 public:
+  virtual ~euler() = default;
+
   /** This field shall return the actual ID of the problem. */
-  virtual int16_t id() = 0;
+  virtual int16_t id() const = 0;
   /** This field shall return the actual title of the problem. */
   virtual std::string caption() = 0;
 

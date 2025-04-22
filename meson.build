@@ -1,5 +1,5 @@
 project('euler++', 'cpp',
-  default_options: ['cpp_std=c++20', 'buildtype=debugoptimized'],
+  default_options: ['cpp_std=c++20', 'buildtype=debugoptimized', 'warning_level=everything', 'werror=true'],
 )
 
 subdir('include')

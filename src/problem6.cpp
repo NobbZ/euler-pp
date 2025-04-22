@@ -3,10 +3,10 @@
 
 #include "problem6.hpp"
 
-uint64_t square_of_sums(uint64_t);
-uint64_t sum_of_squares(uint64_t);
+uint64_t square_of_sums(uint64_t) __attribute__((const));
+uint64_t sum_of_squares(uint64_t) __attribute__((const));
 
-int16_t euler::problem6::id() { return 6; }
+int16_t euler::problem6::id() const { return 6; }
 
 std::string euler::problem6::caption() { return "Sum Square Difference"; }
 

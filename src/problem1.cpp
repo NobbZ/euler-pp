@@ -1,6 +1,6 @@
 #include "problem1.hpp"
 
-int16_t euler::problem1::id() { return 1; }
+int16_t euler::problem1::id() const { return 1; }
 
 std::string euler::problem1::caption() { return "Multiples of 3 and 5"; }
 

@@ -2,7 +2,7 @@
 
 const uint64_t UPPER_BOUND = 4000000; 
 
-int16_t euler::problem2::id() { return 2; }
+int16_t euler::problem2::id() const { return 2; }
 
 std::string euler::problem2::caption() { return "Even Fibonacci numbers"; }
 
