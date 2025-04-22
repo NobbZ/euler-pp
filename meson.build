@@ -8,6 +8,7 @@ subdir('include')
 
 subdir('doc')
 subdir('src')
+subdir('tests')
 
 euler_lib = library('euler_lib', euler_source_files,
   include_directories: includes,
