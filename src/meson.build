@@ -1,5 +1,4 @@
 euler_source_files = files([
-  'main.cpp',
   'euler.cpp',
   'number.cpp',
   'problem1.cpp',
