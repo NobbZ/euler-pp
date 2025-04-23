@@ -1,7 +1,10 @@
 #pragma once
 
 #include <cstdint>
+#include <map>
+#include <ranges>
 #include <string>
+#include <vector>
 
 namespace euler {
 
@@ -22,5 +25,21 @@ public:
 
   /** Returns the URL of the problem description on project eurler. */
   std::string url();
+
+  /** returns the list of all registered problems */
+  static std::vector<euler *> registry() {
+    auto ps = std::ranges::views::values(problems);
+    return std::vector<euler *>(ps.begin(), ps.end());
+  }
+
+  /** registers a problem implementation */
+  template <typename T> static bool register_problem() {
+    auto problem = new T();
+    problems.insert({problem->id(), problem});
+    return true;
+  }
+
+private:
+  static std::map<int16_t, euler*> problems;
 };
 } // namespace euler

@@ -1,5 +1,7 @@
 #include "problem3.hpp"
 
+static bool problem1_registered = euler::euler::register_problem<euler::problem3>();
+
 int16_t euler::problem3::id() const { return 3; }
 
 std::string euler::problem3::caption() { return "Largest Prime Factor"; }

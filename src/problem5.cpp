@@ -5,6 +5,8 @@
 
 #include "problem5.hpp"
 
+static bool problem1_registered = euler::euler::register_problem<euler::problem5>();
+
 int16_t euler::problem5::id() const { return 5; }
 
 std::string euler::problem5::caption() { return "Smallest Multiple"; }

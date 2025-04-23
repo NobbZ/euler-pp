@@ -5,6 +5,8 @@
 
 #include "problem7.hpp"
 
+static bool problem1_registered = euler::euler::register_problem<euler::problem7>();
+
 int16_t euler::problem7::id() const { return 7; }
 
 std::string euler::problem7::caption() { return "10 001st Prime"; }

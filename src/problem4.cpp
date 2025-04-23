@@ -1,6 +1,8 @@
 #include "numbers.hpp"
 #include "problem4.hpp"
 
+static bool problem1_registered = euler::euler::register_problem<euler::problem4>();
+
 int16_t euler::problem4::id() const { return 4; }
 
 std::string euler::problem4::caption() { return "Largest Palindrome Product"; }

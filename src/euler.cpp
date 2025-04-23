@@ -11,3 +11,5 @@ std::string euler::euler::url() {
 
   return oss.str();
 };
+
+std::map<int16_t, euler::euler *> euler::euler::problems = {};

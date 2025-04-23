@@ -6,6 +6,8 @@
 
 #include "problem2.hpp"
 
+static bool problem1_registered = euler::euler::register_problem<euler::problem2>();
+
 const uint64_t UPPER_BOUND = 4000000;
 
 int16_t euler::problem2::id() const { return 2; }
