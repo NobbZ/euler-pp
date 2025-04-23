@@ -27,4 +27,15 @@ test_exe = executable('euler_tests', test_sources,
   link_with: euler_lib,
 )
 
-test('euler tests', test_exe)
+bench_exe = executable('euler_benchmarks', bench_sources,
+  include_directories: includes,
+  dependencies: [catch2_dep],
+  link_with: euler_lib,
+)
+
+test('euler tests', test_exe,
+  protocol: 'tap',
+  args: ['--reporter', 'TAP'],
+)
+
+test('euler marks', bench_exe)
