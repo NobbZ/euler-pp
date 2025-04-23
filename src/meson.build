@@ -7,4 +7,5 @@ euler_source_files = files([
   'problem4.cpp',
   'problem5.cpp',
   'problem6.cpp',
+  'problem7.cpp',
 ])

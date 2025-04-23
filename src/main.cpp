@@ -10,11 +10,13 @@
 #include "problem4.hpp"
 #include "problem5.hpp"
 #include "problem6.hpp"
+#include "problem7.hpp"
 
 [[gnu::abi_tag("cxx11")]]
 std::vector<euler::euler *> problems{
     new euler::problem1(), new euler::problem2(), new euler::problem3(),
     new euler::problem4(), new euler::problem5(), new euler::problem6(),
+    new euler::problem7(),
 };
 
 int main() {

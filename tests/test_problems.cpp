@@ -1,10 +1,11 @@
-#include <catch2/catch_all.hpp>
+#include <catch2/catch_test_macros.hpp>
 #include "problem1.hpp"
 #include "problem2.hpp"
 #include "problem3.hpp"
 #include "problem4.hpp"
 #include "problem5.hpp"
 #include "problem6.hpp"
+#include "problem7.hpp"
 
 TEST_CASE("Problem 1 returns correct result", "[problems]") {
   euler::problem1 p1;
@@ -34,4 +35,9 @@ TEST_CASE("Problem 5 returns correct result", "[problems]") {
 TEST_CASE("Problem 6 returns correct result", "[problems]") {
   euler::problem6 p6;
   REQUIRE(p6.run() == 25164150);
+}
+
+TEST_CASE("Problem 7 returns correct result", "[problems]") {
+  euler::problem7 p7;
+  REQUIRE(p7.run() == 104743);
 }
