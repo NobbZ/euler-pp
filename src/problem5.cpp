@@ -5,11 +5,7 @@
 
 #include "problem5.hpp"
 
-static bool problem1_registered = euler::euler::register_problem<euler::problem5>();
-
-int16_t euler::problem5::id() const { return 5; }
-
-std::string euler::problem5::caption() { return "Smallest Multiple"; }
+REGISTER_EULER_PROBLEM(euler::problem5, 5, "Smallest Multiple");
 
 uint64_t euler::problem5::run() {
   auto divisors{std::ranges::views::iota(1, 20)};

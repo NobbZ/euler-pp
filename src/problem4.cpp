@@ -1,16 +1,13 @@
 #include "numbers.hpp"
+
 #include "problem4.hpp"
 
-static bool problem1_registered = euler::euler::register_problem<euler::problem4>();
-
-int16_t euler::problem4::id() const { return 4; }
-
-std::string euler::problem4::caption() { return "Largest Palindrome Product"; }
+REGISTER_EULER_PROBLEM(euler::problem4, 4, "Largest Palindrome Product");
 
 uint64_t euler::problem4::run() {
-  const uint64_t min { 100 };
+  const uint64_t min{100};
 
-  uint64_t num { 0 };
+  uint64_t num{0};
 
   for (uint64_t i = 999; i >= min; i--) {
     for (uint64_t j = 999; j >= i; j--) {

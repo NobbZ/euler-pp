@@ -5,13 +5,8 @@
 
 #include "problem7.hpp"
 
-static bool problem1_registered = euler::euler::register_problem<euler::problem7>();
-
-int16_t euler::problem7::id() const { return 7; }
-
-std::string euler::problem7::caption() { return "10 001st Prime"; }
+REGISTER_EULER_PROBLEM(euler::problem7, 7, "10 001st Prime");
 
 uint64_t euler::problem7::run() {
   return *std::next(numbers::prime_sequence.begin(), 10000);
 }
-

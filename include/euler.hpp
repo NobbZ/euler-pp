@@ -42,4 +42,14 @@ public:
 private:
   static std::map<int16_t, euler*> problems;
 };
+
+#define REGISTER_EULER_PROBLEM(ProblemClass, ProblemId, ProblemCaption) \
+  namespace { \
+    static bool problem##ProblemId##_registered = euler::euler::register_problem<ProblemClass>(); \
+  } \
+  \
+  int16_t ProblemClass::id() const { return ProblemId; } \
+  \
+  std::string ProblemClass::caption() { return ProblemCaption; }
+
 } // namespace euler
