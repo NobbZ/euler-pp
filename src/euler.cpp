@@ -10,6 +10,6 @@ std::string euler::euler::url() {
   oss << BASE_URL << "format=" << this->id();
 
   return oss.str();
-};
+}
 
 std::map<int16_t, euler::euler *> euler::euler::problems = {};

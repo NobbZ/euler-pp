@@ -2,7 +2,7 @@
 
 #include "problem4.hpp"
 
-REGISTER_EULER_PROBLEM(euler::problem4, 4, "Largest Palindrome Product");
+REGISTER_EULER_PROBLEM(euler::problem4, 4, "Largest Palindrome Product")
 
 uint64_t euler::problem4::run() {
   const uint64_t min{100};

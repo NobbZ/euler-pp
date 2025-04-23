@@ -69,7 +69,9 @@ private:
       return 2;
     if (this->n == 1)
       return 3;
-    return 6 * k + flip();
+    if (this->n % 2 == 0)
+      return 6 * k - 1;
+    return 6 * k + 1;
   }
 
   int flip() { return 1 - 2 * (static_cast<int>(n & 1ULL) ^ 1); }

@@ -3,7 +3,7 @@
 
 #include "problem6.hpp"
 
-REGISTER_EULER_PROBLEM(euler::problem6, 6, "Sum Square Difference");
+REGISTER_EULER_PROBLEM(euler::problem6, 6, "Sum Square Difference")
 
 constexpr uint64_t square_of_sums(uint64_t) __attribute__((const));
 constexpr uint64_t sum_of_squares(uint64_t) __attribute__((const));

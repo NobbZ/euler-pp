@@ -6,7 +6,7 @@
 
 #include "problem2.hpp"
 
-REGISTER_EULER_PROBLEM(euler::problem2, 2, "Even Fibonacci numbers");
+REGISTER_EULER_PROBLEM(euler::problem2, 2, "Even Fibonacci numbers")
 
 const uint64_t UPPER_BOUND = 4000000;
 

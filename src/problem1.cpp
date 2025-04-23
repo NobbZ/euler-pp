@@ -3,7 +3,7 @@
 
 #include "problem1.hpp"
 
-REGISTER_EULER_PROBLEM(euler::problem1, 1, "Multiples of 3 and 5");
+REGISTER_EULER_PROBLEM(euler::problem1, 1, "Multiples of 3 and 5")
 
 uint64_t euler::problem1::run() {
   auto multiples = std::ranges::views::iota(1, 1000) |
