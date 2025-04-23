@@ -1,5 +1,5 @@
 project('euler++', 'cpp',
-  default_options: ['cpp_std=c++20', 'buildtype=debugoptimized', 'warning_level=everything', 'werror=true'],
+  default_options: ['cpp_std=c++23', 'buildtype=debugoptimized', 'warning_level=everything', 'werror=true'],
 )
 
 catch2_dep = dependency('catch2-with-main', required: false)
