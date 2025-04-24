@@ -32,6 +32,11 @@ public:
     return std::vector<euler *>(ps.begin(), ps.end());
   }
 
+  /** returns the problem with the given id */
+  static euler *get_problem(int16_t id) {
+    return problems.at(id);
+  }
+
   /** registers a problem implementation */
   template <typename T> static bool register_problem() {
     auto problem = new T();
