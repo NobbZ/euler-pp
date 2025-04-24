@@ -7,6 +7,7 @@
 #include "problem6.hpp"
 #include "problem7.hpp"
 #include "problem8.hpp"
+#include "problem9.hpp"
 
 TEST_CASE("Problem 1 returns correct result", "[problems]") {
   euler::problem1 p1;
@@ -46,4 +47,9 @@ TEST_CASE("Problem 7 returns correct result", "[problems]") {
 TEST_CASE("Problem 8 returns correct result", "[problems]") {
   euler::problem8 p8;
   REQUIRE(p8.run() == 23514624000);
+}
+
+TEST_CASE("Problem 9 returns correct result", "[problems]") {
+  euler::problem9 p9;
+  REQUIRE(p9.run() == 31875000);
 }
