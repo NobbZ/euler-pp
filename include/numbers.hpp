@@ -55,8 +55,6 @@ inline constexpr std::ranges::subrange<euler::numbers::fibonacci_iterator,
 inline constexpr std::array<uint64_t, 2> prefix{2, 3};
 
 inline constexpr bool is_prime(uint64_t n) {
-  uint64_t x{3};
-
   if (n < 2) {
     return false;
   }
@@ -65,13 +63,13 @@ inline constexpr bool is_prime(uint64_t n) {
     return true;
   }
 
-  while (x * x <= n) {
-    if (n % x == 0) {
+  for (uint64_t i = 5; i * i <= n; i += 6) {
+    // We check for divisibility by 6k - 1 and 6k + 1
+    // We know any prime number greater than 3 can be written in the form 6k ± 1
+    if (n % i == 0 || n % (i + 2) == 0) {
       return false;
     }
-    x += 2;
   }
-
   return true;
 }
 
