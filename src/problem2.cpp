@@ -2,7 +2,7 @@
 #include <numeric>
 #include <ranges>
 
-#include "numbers.hpp"
+#include "fibonacci.hpp"
 
 #include "problem2.hpp"
 
