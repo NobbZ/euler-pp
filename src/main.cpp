@@ -35,7 +35,7 @@ void run_and_pretty(euler::euler *p) {
   constexpr u_int8_t colon_len{colon.length()};
   constexpr u_int8_t id_len{3};
   constexpr u_int8_t caption_len{29};
-  constexpr u_int8_t result_len{11};
+  constexpr u_int8_t result_len{12};
 
   constexpr u_int8_t total_len{label_len + id_len + colon_len + caption_len +
                                result_len};
