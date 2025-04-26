@@ -1,8 +1,9 @@
 #pragma once
 
-#include <cstddef>
 #include <cstdint>
 #include <ranges>
+#include <tuple>
+#include <generator>
 
 namespace euler::numbers {
 struct fibonacci_iterator {
@@ -35,55 +36,6 @@ struct fibonacci_iterator {
   using difference_type = std::ptrdiff_t;
 };
 
-struct prime_iterator {
-  uint64_t k = 0;
-  uint64_t n = 0;
-
-  friend constexpr bool operator==(const prime_iterator &,
-                                   const prime_iterator &) noexcept = default;
-
-  uint64_t operator*() noexcept { return this->get_prime(); }
-
-  prime_iterator &operator++() noexcept {
-
-    do {
-      this->n++;
-      if (this->flip() == -1)
-        this->k++;
-    } while (!this->is_prime());
-
-    return *this;
-  }
-
-  prime_iterator operator++(int) noexcept {
-    auto tmp = *this;
-    ++(*this);
-    return tmp;
-  }
-  using value_type = uint64_t;
-  using difference_type = std::ptrdiff_t;
-
-private:
-  uint64_t get_prime() noexcept {
-    if (this->n == 0)
-      return 2;
-    if (this->n == 1)
-      return 3;
-    if (this->n % 2 == 0)
-      return 6 * k - 1;
-    return 6 * k + 1;
-  }
-
-  int flip() { return 1 - 2 * (static_cast<int>(n & 1ULL) ^ 1); }
-  bool is_prime() noexcept {
-    for (uint64_t i = 2; i * i <= this->get_prime(); i++) {
-      if (this->get_prime() % i == 0)
-        return false;
-    }
-    return true;
-  }
-};
-
 /** Checkes whether a given number is a palindrome.
  *
  * @param n the number to check
@@ -100,9 +52,47 @@ inline constexpr std::ranges::subrange<euler::numbers::fibonacci_iterator,
     fibonacci_sequence = std::ranges::subrange(
         euler::numbers::fibonacci_iterator{}, std::unreachable_sentinel);
 
-inline constexpr std::ranges::subrange<euler::numbers::prime_iterator,
-                                       std::unreachable_sentinel_t>
-    prime_sequence = std::ranges::subrange(euler::numbers::prime_iterator{},
-                                           std::unreachable_sentinel);
+inline constexpr std::array<uint64_t, 2> prefix{2, 3};
 
+inline constexpr bool is_prime(uint64_t n) {
+  uint64_t x{3};
+
+  if (n < 2) {
+    return false;
+  }
+
+  if (n == 2 || n == 3) {
+    return true;
+  }
+
+  while (x * x <= n) {
+    if (n % x == 0) {
+      return false;
+    }
+    x += 2;
+  }
+
+  return true;
+}
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#pragma GCC diagnostic ignored "-Wswitch-default"
+inline std::generator<uint64_t> primes() {
+  for (auto p : prefix) {
+    co_yield p;
+  }
+
+  for (uint64_t k : std::ranges::views::iota(UINT64_C(1))) {
+    const uint64_t candidate_1 = 6 * k - 1;
+    const uint64_t candidate_2 = 6 * k + 1;
+
+    if (is_prime(candidate_1))
+      co_yield candidate_1;
+
+    if (is_prime(candidate_2))
+      co_yield candidate_2;
+  }
+}
+#pragma GCC diagnostic pop
 } // namespace euler::numbers

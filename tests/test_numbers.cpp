@@ -16,7 +16,7 @@ TEST_CASE("Fibonacci sequence generates correct values", "[numbers]") {
 }
 
 TEST_CASE("Prime sequence generates correct values", "[numbers]") {
-  auto primes = euler::numbers::prime_sequence | std::views::take(10) | std::views::common;
+  auto primes = euler::numbers::primes() | std::views::take(10) | std::ranges::to<std::vector>();
   std::vector<uint64_t> expected = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
   
   REQUIRE(std::equal(primes.begin(), primes.end(), expected.begin()));
