@@ -1,5 +1,7 @@
 #include "catch2/catch_test_macros.hpp"
+
 #include "numbers.hpp"
+#include "prime.hpp"
 
 TEST_CASE("Palindrome detection works correctly", "[numbers]") {
   REQUIRE(euler::numbers::is_palindrome(121) == true);

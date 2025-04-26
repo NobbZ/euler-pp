@@ -1,6 +1,6 @@
 #include <ranges>
 
-#include "numbers.hpp"
+#include "prime.hpp"
 
 #include "problem10.hpp"
 

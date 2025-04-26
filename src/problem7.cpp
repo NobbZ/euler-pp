@@ -2,7 +2,7 @@
 #include <ranges>
 #include <string>
 
-#include "numbers.hpp"
+#include "prime.hpp"
 
 #include "problem7.hpp"
 
