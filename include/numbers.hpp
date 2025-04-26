@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstdint>
+#include <cstddef>
 #include <generator>
 
 namespace euler::numbers {
@@ -9,5 +9,15 @@ namespace euler::numbers {
  * @param n the number to check
  * @return whether `n` is a palindrome
  */
-bool is_palindrome(uint64_t const n) __attribute__((const));
+template <typename T> bool is_palindrome(T const n) {
+  T rev = 0;
+
+  T tmp = n;
+  while (tmp != 0) {
+    rev = (rev * 10) + (tmp % 10);
+    tmp /= 10;
+  }
+
+  return rev == n;
+}
 } // namespace euler::numbers
