@@ -4,7 +4,7 @@
 
 #include "problem10.hpp"
 
-REGISTER_EULER_PROBLEM(euler::problem10, 10, "Multiples of 3 and 5")
+REGISTER_EULER_PROBLEM(euler::problem10, 10, "Summation of Primes")
 
 constexpr uint64_t UPPER_BOUND = 2000000;
 
